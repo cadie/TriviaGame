@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trivia Game</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Trivia Game</h1>
+
+    <div class="splash-screen">
+      <button id="start-game">Start Game</button>
+    </div>
+
+    <div class="game-question">
+      <p id="time-remaining">Time Remaining: </p>
+      <p id="question">Trivia question?</p>
+      <div class="multiple-choice">
+        <a id="option-1" class="multiple-choice-item"></a>
+        <a id="option-2" class="multiple-choice-item"></a>
+        <a id="option-3" class="multiple-choice-item"></a>
+        <a id="option-4" class="multiple-choice-item"></a>
+      </div>
+    </div><!--/.game-question-->
+
+    <div class="game-results">
+      <p id="correct-answers">Correct Answers: </p>
+      <p id="incorrect-answers">Incorrect Answers: </p>
+      <p id="unanswered">Unanswered: </p>
+      <!-- <p id="score">Score: </p> -->
+    </div><!--/.game-results-->
+
+  </div><!--/.container-->
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
+<script src="assets/javascript/app.js"></script>
+</body>
+</html>
