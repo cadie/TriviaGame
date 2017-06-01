@@ -6,7 +6,7 @@ $('.game-question').hide();
 $('.game-results').hide();
 
 $(document).ready(function() {
-    $("#audio").get(0).play();
+    $("audio").get(0).play();
 });
 
 // Trivia object that holds questions, choices and answers
@@ -20,7 +20,7 @@ var trivia = {
 			]
 		},
 		{
-			"question" : "How did Harry's parents die according to the Dursleys",
+			"question" : "How did Harry's parents die according to the Dursleys?",
 			"answer" : "In a Car Crash",
 			"multipleChoice" : [
 				"They Were Both Very Sick", "They Were Murdered", "In a Car Crash", "Lost at Sea"
@@ -31,6 +31,27 @@ var trivia = {
 			"answer" : "713",
 			"multipleChoice" : [
 				"703", "713", "504", "217"
+			]
+		},
+    {
+			"question" : "Fill in the blank: \"Percy wouldn't know a joke if it danced naked in front of him wearing ____________\"",
+			"answer" : "Dobby's Tea Cozy",
+			"multipleChoice" : [
+				"Sirius' Two-Way Mirror", "Harry's Invisibility Cloak", "Dobby's Tea Cozy", "Ron's Red Hair"
+			]
+		},
+    {
+			"question" : "Which of Ron's brothers is a Gryffindor Prefect in Harry's first year?",
+			"answer" : "Percy Weasley",
+			"multipleChoice" : [
+				"Percy Weasley", "Bill Weasley", "George Weasley", "Fred Weasley"
+			]
+		},
+    {
+			"question" : "Who replaces Cornelius Fudge as Minister of Magic?",
+			"answer" : "Rufus Scrimgeour",
+			"multipleChoice" : [
+				"Arthur Weasley", "Rufus Scrimgeour", "Kingsley Shacklebolt", "Remus Lupin"
 			]
 		}
 	]
@@ -54,7 +75,7 @@ function start() {
 // Function to display questions
 function askQuestion(questionCount) {
 	$('.game-question').show();
-	if( questionCount < 3 ) {
+	if( questionCount < 6 ) {
 		console.log(trivia.questions[questionCount].question);
 		$('#question').html(trivia.questions[questionCount].question);
 
@@ -106,7 +127,7 @@ function countDownToNextQuestion() {
 	countdown--;
 
 	// Show the countdown in the #show-countdown tag.
-    $('#time-remaining').html('<h4>Time Remaining: ' + countdown + ' seconds</h4>');
+    $('#time-remaining').html('Time Remaining: ' + countdown + ' seconds');
 
     // Once countdown hits zero...
     if (countdown === 0){
