@@ -5,8 +5,11 @@ var correct = false;
 $('.game-question').hide();
 $('.game-results').hide();
 
+$(document).ready(function() {
+    $("#audio").get(0).play();
+});
 
-// Create trivia object to hold questions
+// Trivia object that holds questions, choices and answers
 var trivia = {
 	"questions" : [
 		{
@@ -69,7 +72,7 @@ function askQuestion(questionCount) {
 }
 
 
-// Function to check of answer to question is correct
+// Function to check if answer to question is correct
 function checkIfCorrect(guessed) {
 	if( guessed === trivia.questions[questionCount].answer) {
 		return true;
@@ -80,7 +83,7 @@ function checkIfCorrect(guessed) {
 	}
 }
 
-//Button listener to listen for answers
+// Check if selected answer matches current question answer
 $('.multiple-choice-item').on('click', function(){
 
 	if (checkIfCorrect($(this).html()) === true) {
@@ -89,7 +92,6 @@ $('.multiple-choice-item').on('click', function(){
 		questionCount++;
 		askQuestion(questionCount);
 	}
-
 	else if (checkIfCorrect($(this).html()) === false){
 		incorrectAnswers++;
 		console.log(" # of Incorrect Answers: " + incorrectAnswers);
